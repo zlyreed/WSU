@@ -12,6 +12,9 @@
     - Scale: in MeshLab, the transformations can be found under FILTERS / NORMALS, CURVATURES AND ORIENTATION / TRANSFORM… 
     - Save as new .obj files (unit: meter)
 - Obtain the transformation for T1 (from the CT global CS to T1 local CS; both models are provided by CJ): 
-  - In OpenSim, import both T1 bone models (in the CT CS and the local CS) and identify same bony landmarks in the same order
-  - In MatLab, run "absoluteOrientationQuaternion.m" funtion to get the transformation (inputs: at least four corresponding points in two different CSs)
+  - Use OpenSim and Matlab (note: errors on manually picked corresponding bony landmarks)
+    - In OpenSim, import both T1 bone models (in the CT CS and the local CS) and identify same bony landmarks in the same order
+    - In MatLab, run "absoluteOrientationQuaternion.m" funtion to get the transformation (inputs: at least four corresponding points in two different CSs)
+  - Use MeshLab Align feature
+  
 - Apply the same transformation (from CT global CS to T1 local CS) to other bony structures below T1 to mantiain the original posture in CT images (we don't know their real  neutral postures)
