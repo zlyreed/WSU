@@ -1,3 +1,4 @@
+
 ## The bone files are from AV and her group 
 ### Work done at WSU (bone models segmented in 3D doctor)
 - File types: .obj or .asc
@@ -16,5 +17,10 @@
     - In OpenSim, import both T1 bone models (in the CT CS and the local CS) and identify same bony landmarks in the same order
     - In MatLab, run "absoluteOrientationQuaternion.m" funtion to get the transformation (inputs: at least four corresponding points in two different CSs)
   - Use MeshLab Align feature
-  
+    - Load two T1 models
+    - Go to "Edit"--> "Align"-->  pick T1_localCS model as ""glue mesh here" to serve as a base --> pick T1_CTCS model and click "Point Based Glueing" --> double click to select corresponding points on both models --> "process" --> errors=0.001; matrix:
+         -0.003448 -0.895853 0.444338 0.080804 
+         -0.020896 -0.444179 -0.895694 -0.175250 
+         0.999776 -0.012374 -0.017188 -0.001771 
+         0.000000 0.000000 0.000000 1.000000  
 - Apply the same transformation (from CT global CS to T1 local CS) to other bony structures below T1 to mantiain the original posture in CT images (we don't know their real  neutral postures)
