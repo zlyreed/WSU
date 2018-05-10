@@ -17,7 +17,7 @@
     - In MatLab, run "absoluteOrientationQuaternion.m" funtion to get the transformation (inputs: at least four corresponding points in two different CSs)
   - Use MeshLab Align (Mac 64bit v1.3.3) feature ([YouTube tutorial](https://www.youtube.com/watch?v=4g9Hap4rX0k))
     - Load two T1 models
-    - Go to "Edit"--> "Align"-->  pick T1_localCS model as ""glue mesh here" to serve as a base --> pick T1_CTCS model and click "Point Based Glueing" --> double click to select corresponding points on both models --> "process" --> "File"/"Save Projec"/save as "Align Project (*.aln)":[alignment file](T1_alignment.aln)
+    - Go to "Edit"--> "Align"-->  pick T1_localCS model as ""glue mesh here" to serve as a base --> pick T1_CTCS model and click "Point Based Glueing" --> double click to select corresponding points on both models --> "process" --> "File"/"Save Projec"/save as "Align Project (*.aln)": [T1_alignment.aln](T1_alignment.aln)
     - From T1_meter.obj (CT CS) to T1.obj (local CS); transformation matrix:
          [-0.003448 -0.895853 0.444338 0.080804;
          -0.020896 -0.444179 -0.895694 -0.175250;
