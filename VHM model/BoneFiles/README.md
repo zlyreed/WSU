@@ -18,7 +18,7 @@
   - Use MeshLab Align feature
     - Load two T1 models
     - Go to "Edit"--> "Align"-->  pick T1_localCS model as ""glue mesh here" to serve as a base --> pick T1_CTCS model and click "Point Based Glueing" --> double click to select corresponding points on both models --> "process" --> "File"/"Save Projec"/save as "Align Project (*.aln)"
-    - From T1_meter.obj (CT CS) to T1.obj (local CS); errors=0.001; transformation matrix:
+    - From T1_meter.obj (CT CS) to T1.obj (local CS); transformation matrix:
          [-0.003448 -0.895853 0.444338 0.080804;
          -0.020896 -0.444179 -0.895694 -0.175250;
          0.999776 -0.012374 -0.017188 -0.001771; 
