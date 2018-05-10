@@ -1,7 +1,9 @@
 %%obtain the tranformation matrix between the same bone in two different
-%%coordinate system (e.g., from the CT CS to the local CS): it didnt work
-%%well with the T1 bone models (two models have the same amount of points,
+%%coordinate system (e.g., from the CT CS to the local CS): 
+% ---1. directly align two obj models using "absoluteOrientationQuaternion":  it didnt work well with the T1 bone models (two models have the same amount of points,
 %%but maybe the order of points are not consistent).
+% ---2. could use OpenSim (pick corresponding bony marks) and Matlab: seems too much work;
+% ---3. Use MeshLab "Align" feature to get the transformation matrix (here): check by plotting them out, and the transformation works well.
 
 clear all
 close all
@@ -44,18 +46,6 @@ view(3)
 legend(g0,'X axis','Y axis', 'Z axis','BoneInCTCS','BoneInLocalCS')
 title('The bone point cloud in CT and Local CS)')
 axis equal
-
-%% get transformation (tranform A to B; Bi = sR*Ai+T)
-A=BoneCT_points';
-B=BoneLocal_points';
-doScale=0;  % no scaling
-
-[s R T error] = absoluteOrientationQuaternion( A, B, doScale)
-
-% B_trans = (R*A+T)';
-% 
-% figure (1)
-% scatter3(B_trans(:,1),B_trans(:,2),B_trans(:,3),'gx');
 
 %% Import MeshLab .aln file
 filename = 'T1_alignment.aln';
