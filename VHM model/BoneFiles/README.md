@@ -24,6 +24,6 @@
          -0.020896 -0.444179 -0.895694 -0.175250;
          0.999776 -0.012374 -0.017188 -0.001771; 
          0.000000 0.000000 0.000000 1.000000].
-      - Angles (deg; X,Y,Z)=91.0993   26.3810   90.2205; Translations (m;X,Y,Z)=0.0808   -0.1752   -0.0018.
-    - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
+      - Angles (deg; X,Y,Z)=91.0993   26.3810   90.2205; Translations (m;X,Y,Z)=0.0808   -0.1752   -0.0018.
+    - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
 - Apply the same transformation (from CT global CS to T1 local CS) to other bony structures below T1 to mantiain the original posture in CT images (we don't know their real  neutral postures)
