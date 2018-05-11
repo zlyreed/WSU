@@ -18,10 +18,11 @@
   - Use MeshLab Align (Mac 64bit v1.3.3) feature ([YouTube tutorial](https://www.youtube.com/watch?v=4g9Hap4rX0k))
     - Load two T1 models
     - Go to "Edit"--> "Align"-->  pick T1_localCS model as ""glue mesh here" to serve as a base --> pick T1_CTCS model and click "Point Based Glueing" --> double click to select corresponding points on both models --> "process" --> "File"/"Save Projec"/save as "Align Project (*.aln)": [T1_alignment.aln](T1_alignment.aln)
-    - From T1_meter.obj (CT CS) to T1.obj (local CS); transformation matrix:
+    - From T1_meter.obj (CT CS) to T1.obj (local CS): transformation matrix=
          [-0.003448 -0.895853 0.444338 0.080804;
          -0.020896 -0.444179 -0.895694 -0.175250;
          0.999776 -0.012374 -0.017188 -0.001771; 
-         0.000000 0.000000 0.000000 1.000000] 
-    - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
+         0.000000 0.000000 0.000000 1.000000].
+         Angles (deg; X,Y,Z)=91.0993   26.3810   90.2205; Translations (m;X,Y,Z)=0.0808   -0.1752   -0.0018.
+    - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
 - Apply the same transformation (from CT global CS to T1 local CS) to other bony structures below T1 to mantiain the original posture in CT images (we don't know their real  neutral postures)
