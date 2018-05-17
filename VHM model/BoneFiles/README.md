@@ -25,3 +25,4 @@
     
 - Apply the same transformation (from CT global CS to T1 local CS) to other bony structures below T1 to mantiain the original posture in CT images (we don't know their real  neutral postures)
   - T2 to T12: use the matlab code [Obj_TransformAndSave.m](Obj_TransformAndSave.m), which calls functions [readObj_vf.m](functions/readObj_vf.m), [applyTransformation.m](functions/applyTransformation.m), and [writeObj_vf.m](functions/writeObj_vf.m) --> output a new obj file in T1 local CS (T2_to_T12_meter_T1CS.obj)
+  - Similarly, transformed L1_to_L5, Clavicles, Scapulas,Rib and Pelvis into the T1 local CS (use matlabcode)
