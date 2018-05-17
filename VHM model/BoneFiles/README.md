@@ -4,7 +4,7 @@
 - Unit: mm 
 - Cooridinate System (CS)
   - They are in CT gobal CS originally;
-  - CJ appiled a matlab code (using PCA) to make some bones (C1 to T2) into their local CS (under foler "\Corrected for local CS_byCJ") (e.g., [C1 model](Corrected for local CS_byCJ/C1.obj))
+  - CJ appiled a matlab code (using PCA) to make some bones (C1 to T2) into their local CS (under foler "\Corrected for local CS_byCJ") 
 
 ### Work done by LZ
 - Scale the bone files into meter (use .obj files) 
