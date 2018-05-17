@@ -4,7 +4,7 @@
 - Unit: mm 
 - Cooridinate System (CS)
   - They are in CT gobal CS originally;
-  - CJ appiled a matlab code (using PCA) to make some bones (C1 to T2) into their local CS (under foler "\Corrected for local CS_byCJ")
+  - CJ appiled a matlab code (using PCA) to make some bones (C1 to T2) into their local CS (under foler "\Corrected for local CS_byCJ") (e.g., [C1 model](Corrected for local CS_byCJ/C1.obj))
 
 ### Work done by LZ
 - Scale the bone files into meter (use .obj files) 
@@ -24,4 +24,4 @@
     - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
     
 - Apply the same transformation (from CT global CS to T1 local CS) to other bony structures below T1 to mantiain the original posture in CT images (we don't know their real  neutral postures)
-  - T2 to T12: use the matlab code Obj_TransformAndSave.m, which calls functions readObj_vf.m, applyTransformation.m, and writeObj_vf.m --> output a new obj file in T1 local CS (T2_to_T12_meter_T1CS.obj)
+  - T2 to T12: use the matlab code Obj_TransformAndSave.m, which calls functions [readObj_vf.m](functions/readObj_vf.m), applyTransformation.m, and writeObj_vf.m --> output a new obj file in T1 local CS (T2_to_T12_meter_T1CS.obj)
