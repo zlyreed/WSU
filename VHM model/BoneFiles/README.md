@@ -11,10 +11,7 @@
     - Scale: in MeshLab, the transformations can be found under FILTERS / NORMALS, CURVATURES AND ORIENTATION / TRANSFORM… 
     - Save as new .obj files (unit: meter)
 - Obtain the transformation for T1 (from the CT global CS to T1 local CS; both models are provided by CJ): 
-  - Use OpenSim and Matlab (note: errors on manually picked corresponding bony landmarks)
-    - In OpenSim, import both T1 bone models (in the CT CS and the local CS) and identify same bony landmarks in the same order
-    - In MatLab, run "absoluteOrientationQuaternion.m" funtion to get the transformation (inputs: at least four corresponding points in two different CSs)
-  - Use MeshLab (Mac 64bit v1.3.3) "Align" feature ([YouTube tutorial](https://www.youtube.com/watch?v=4g9Hap4rX0k))
+  - Use MeshLab (Mac 64bit v1.3.3) "Align" feature ([YouTube tutorial](https://www.youtube.com/watch?v=4g9Hap4rX0k))
     - Load two T1 models
     - Go to "Edit"--> "Align"-->  pick T1_localCS model as ""glue mesh here" to serve as a base --> pick T1_CTCS model and click "Point Based Glueing" --> double click to select corresponding points on both models --> "process" --> "File"/"Save Projec"/save as "Align Project (*.aln)": [T1_alignment.aln](T1_alignment.aln)
     - From T1_meter.obj (CT CS) to T1.obj (local CS): 
