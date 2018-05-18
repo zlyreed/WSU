@@ -2,8 +2,9 @@
 ### Work done at WSU (bone models segmented in 3D doctor)
 - File types: .obj or .asc 
 - Cooridinate System (CS)
-  - They are in CT gobal CS originally, unit=mm;
-  - CJ appiled a matlab code (using PCA) to make several bones (C1 to T2) into their local CS (under foler "\Corrected for local CS_byCJ"), unit=m.
+   - They are in CT gobal CS originally, unit=mm;
+   - CJ appiled a matlab code (using PCA) to make several bones (C1 to T2) into their local CS (under foler "\Corrected for local CS_byCJ"), unit=m.
+
 
 ### Work done by LZ
 - Scale the bone files into meter (use .obj files) 
