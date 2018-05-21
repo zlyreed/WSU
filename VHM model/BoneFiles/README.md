@@ -1,4 +1,4 @@
-## The bone files are from AV and her group 
+# The bone files are from AV and her group 
 ### Work done at WSU (bone models segmented in 3D doctor)
 - File types: .obj or .asc 
 - Cooridinate System (CS)
@@ -7,10 +7,14 @@
 
 
 ### Work done by LZ
-- Scale the bone files into meter (use .obj files) 
+1. Scale the bone files into meter (use .obj files) 
   - Use a free software [MeshLab](http://www.meshlab.net/), check out the [tutorial](http://www.cse.iitd.ac.in/~mcs112609/Meshlab%20Tutorial.pdf).
     - Scale: in MeshLab, the transformations can be found under FILTERS / NORMALS, CURVATURES AND ORIENTATION / TRANSFORM… 
     - Save as new .obj files (unit: meter)
+    
+2. Transform skull (along with mandible/jaw) into the skull CS
+    
+3. Transform the bony structions below T1 to T1 CS (i.e., move along with T1)
 - Obtain the transformation for T1 (from the CT global CS to T1 local CS; both models are provided by CJ): 
   - Use MeshLab (Mac 64bit v1.3.3) "Align" feature ([YouTube tutorial](https://www.youtube.com/watch?v=4g9Hap4rX0k))
     - Load two T1 models
@@ -24,3 +28,6 @@
   - T2 to T12: use [Obj_TransformAndSave.m](Obj_TransformAndSave.m), which calls functions [readObj_vf.m](functions/readObj_vf.m), [applyTransformation.m](functions/applyTransformation.m), and [writeObj_vf.m](functions/writeObj_vf.m) --> output a new obj file in T1 local CS (T2_to_T12_meter_T1CS.obj)
   - Similarly, transform L1_to_L5, Clavicles, Scapulas,Rib and Pelvis (such as Ribs_meter.obj, Right_Clavicle_meter.obj and etc.) into the T1 local CS (use [Obj_TransformAndSave_multipleFiles.m](Obj_TransformAndSave_multipleFiles.m), which calls the same three functions as above).
   - Note: The matlab codes above only read and write Vertex and Face data from/to the obj files. The transformed obj files could not be read in OpenSim, so all the MatLab-written obj files have been opened in MeshLab and resaved to new obj files with 'Normal' information ("file"-->"Export mesh as..." and make sure 'Normal' was checked; e.g., "Right_Scapula_meter_T1CS_vnf.obj"-- the obj file in T1 CS with vertex, face and normal information).
+  
+4. Adjust shoulder posture (clavicle and scapular bones) to be "neutral" posture
+
