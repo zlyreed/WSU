@@ -14,9 +14,8 @@
     
 2. Transform skull (along with mandible/jaw) into the skull CS
 - Add markers in the original skull CT CS:
-  - Opisthion and Basion ![OpisthionBasion](pictures/OpisthionBasion.jpg "OpisthionBasion")
-  - Orbitale and Tragion (Frankfort plane)
-  ![FrankfurtPlane](pictures/FrankfurtPlane2.jpg "FrankfurtPlane")
+  - Opisthion, Basion; Orbitale and Tragion (Frankfort plane)
+  ![OpisthionBasion](pictures/OpisthionBasion.jpg "OpisthionBasion") ![FrankfurtPlane](pictures/FrankfurtPlane2.jpg "FrankfurtPlane")
     
 3. Transform the bony structions below T1 to T1 CS (i.e., move along with T1)
 - Obtain the transformation for T1 (from the CT global CS to T1 local CS; both models are provided by CJ): 
