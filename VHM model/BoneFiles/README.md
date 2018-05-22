@@ -1,4 +1,4 @@
-# The bone files are from AV and her group 
+## The bone files are from AV and her group 
 ### Work done at WSU (bone models segmented in 3D doctor)
 - File types: .obj or .asc 
 - Cooridinate System (CS)
@@ -7,17 +7,23 @@
 
 
 ### Work done by LZ
-1. Scale the bone files into meter (use .obj files) 
+**1. Scale the bone files into meter (use .obj files) **
   - Use a free software [MeshLab](http://www.meshlab.net/), check out the [tutorial](http://www.cse.iitd.ac.in/~mcs112609/Meshlab%20Tutorial.pdf).
     - Scale: in MeshLab, the transformations can be found under FILTERS / NORMALS, CURVATURES AND ORIENTATION / TRANSFORM… 
     - Save as new .obj files (unit: meter)
     
-2. Transform skull (along with mandible/jaw) into the skull CS
-- Add markers in the original skull CT CS:
-  - Opisthion, Basion; Orbitale and Tragion (Frankfort plane)
+**2. Transform skull (along with mandible/jaw) into the skull local CS**
+- Obtain the bony landmarks of skull in the original CT CS: Opisthion, Basion; Orbitale and Tragion (Frankfort plane)
   ![OpisthionBasion](pictures/OpisthionBasion.jpg "OpisthionBasion") ![FrankfurtPlane](pictures/FrankfurtPlane2.jpg "FrankfurtPlane")
-    
-3. Transform the bony structions below T1 to T1 CS (i.e., move along with T1)
+- Define the skull local CS as the following; use the matlab code [SetupLocalCS_Skull.m](SetupLocalCS_Skull.m) to transform the skull and mandible obj files into the defined skull local CS.   
+  - Origin: at center of foramen magnum (midpoint from basion to opithion); 
+  - X-axis:  parallel to the Frankfort plane (line passing through orbit and tragus), pointing anteriorly
+  - In the CT CS:  the sagittal plane looks fine  defined by Y Z  plane
+
+**3. Transform the hyoid bone into the its local CS**
+
+
+**4. Transform the bony structions below T1 into the T1 CS (i.e., fixed with T1)**
 - Obtain the transformation for T1 (from the CT global CS to T1 local CS; both models are provided by CJ): 
   - Use MeshLab (Mac 64bit v1.3.3) "Align" feature ([YouTube tutorial](https://www.youtube.com/watch?v=4g9Hap4rX0k))
     - Load two T1 models
@@ -32,5 +38,5 @@
   - Similarly, transform L1_to_L5, Clavicles, Scapulas,Rib and Pelvis (such as Ribs_meter.obj, Right_Clavicle_meter.obj and etc.) into the T1 local CS (use [Obj_TransformAndSave_multipleFiles.m](Obj_TransformAndSave_multipleFiles.m), which calls the same three functions as above).
   - Note: The matlab codes above only read and write Vertex and Face data from/to the obj files. The transformed obj files could not be read in OpenSim, so all the MatLab-written obj files have been opened in MeshLab and resaved to new obj files with 'Normal' information ("file"-->"Export mesh as..." and make sure 'Normal' was checked; e.g., "Right_Scapula_meter_T1CS_vnf.obj"-- the obj file in T1 CS with vertex, face and normal information).
   
-4. Adjust shoulder posture (clavicle and scapular bones) to be "neutral" posture
+**5. Adjust shoulder posture (clavicle and scapular bones) to be "neutral" posture**
 
