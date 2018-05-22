@@ -13,6 +13,7 @@
     - Save as new .obj files (unit: meter)
     
 2. Transform skull (along with mandible/jaw) into the skull CS
+- Add markers in the original skull CT CS:  ![OpisthionBasion](/pictures/img.jpg?raw=true "OpisthionBasion.jpg")
     
 3. Transform the bony structions below T1 to T1 CS (i.e., move along with T1)
 - Obtain the transformation for T1 (from the CT global CS to T1 local CS; both models are provided by CJ): 
