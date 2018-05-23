@@ -27,9 +27,9 @@
   - Similarly, transform L1_to_L5, Clavicles, Scapulas,Rib and Pelvis (such as Ribs_meter.obj, Right_Clavicle_meter.obj and etc.) into the T1 local CS (use [Obj_TransformAndSave_multipleFiles.m](Obj_TransformAndSave_multipleFiles.m), which calls the same three functions as above).
   - Note: The matlab codes above only read and write Vertex and Face data from/to the obj files. The transformed obj files could not be read in OpenSim, so all the MatLab-written obj files have been opened in MeshLab and resaved to new obj files with 'Normal' information ("file"-->"Export mesh as..." and make sure 'Normal' was checked; e.g., "Right_Scapula_meter_T1CS_vnf.obj"-- the obj file in T1 CS with vertex, face and normal information).
   
-**3. Adjust shoulder posture (clavicle and scapular bones) to be "neutral" posture**
 
-**4. Transform skull (along with mandible/jaw) into the skull local CS**
+
+**3. Transform skull (along with mandible/jaw) into the skull local CS**
 - Obtain the bony landmarks of skull in the original CT CS: Opisthion, Basion; Orbitale and Tragion (Frankfort plane)
   ![OpisthionBasion](pictures/OpisthionBasion.jpg "OpisthionBasion") ![FrankfurtPlane](pictures/FrankfurtPlane2.jpg "FrankfurtPlane")
 - Define the skull local CS as the following; use the matlab code [SetupLocalCS_Skull.m](SetupLocalCS_Skull.m) to transform the skull and mandible obj files into the defined skull local CS.   
@@ -37,7 +37,12 @@
   - X-axis:  parallel to the Frankfort plane (line passing through orbit and tragus), pointing anteriorly
   - In the CT CS:  the sagittal plane looks fine  defined by Y Z  plane
 
-**5. Transform the hyoid bone into the its local CS**
+**4. Transform the hyoid bone into the its local CS**
+  -  Define the hyoid local CS:
+  	  - Origin: the most anterior-superior point (H1)
+	  - axis: passing through H1 and H2, pointing anteriorly
+	  - Y axis: perpendicular to X axis, pointing cephalad
 
+![Xray_hyoidMarks](pictures/Xray_hyoidMarks.png "Xray_hyoidMarks")
 
-
+**5. Adjust shoulder posture (clavicle and scapular bones) to be "neutral" posture**
