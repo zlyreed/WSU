@@ -97,8 +97,8 @@ OrbitTragusAngle_Local=-atan((Orbit_Local(1,2)-Tragus_Local(1,2))/(Orbit_Local(1
 
 %% write into a new obj
 notes='The obj. file is generated in matlab with only vertex and face data.';
-Skull_obj_new='Skull_meter_T1CS.obj';
-Mandible_obj_new='Mandible_meter_T1CS.obj';
+Skull_obj_new='Skull_meter_LocalCS.obj';
+Mandible_obj_new='Mandible_meter_LocalCS.obj';
 
 writeObj_vf(Skull_obj_new,SkullLocal_points,Skullct_face,notes);
 writeObj_vf(Mandible_obj_new,MandibleLocal_points,Mandiblect_face,notes);
