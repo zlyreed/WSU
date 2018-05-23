@@ -43,6 +43,6 @@
 	  - axis: passing through H1 and H2, pointing anteriorly
 	  - Y axis: perpendicular to X axis, pointing cephalad
 
-![Xray_hyoidMarks](pictures/Xray_hyoidMarks.png "Xray_hyoidMarks")
+![Xray_hyoidMarks](pictures/Xray_hyoidMark_small.png "Xray_hyoidMarks")
 
 **5. Adjust shoulder posture (clavicle and scapular bones) to be "neutral" posture**
