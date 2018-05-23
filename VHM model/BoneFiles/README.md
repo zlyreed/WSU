@@ -42,7 +42,8 @@
   	  - Origin: the most anterior-superior point (H1)
 	  - axis: passing through H1 and H2, pointing anteriorly
 	  - Y axis: perpendicular to X axis, pointing cephalad
-
-![Xray_hyoidMarks](pictures/Xray_hyoidMarks_small.png "Xray_hyoidMarks")
+	  
+![Xray_hyoidMarks](pictures/Xray_hyoidMarks_small.png "Xray_hyoidMarks") 
+![HyoidBone](pictures/Hyoid_muscleAttachments.jpg "HyoidBone")
 
 **5. Adjust shoulder posture (clavicle and scapular bones) to be "neutral" posture**
