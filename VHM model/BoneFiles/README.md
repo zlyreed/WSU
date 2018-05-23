@@ -32,13 +32,13 @@
 **3. Transform skull (along with mandible/jaw) into the skull local CS**
 - Obtain the bony landmarks of skull in the original CT CS: Opisthion, Basion; Orbitale and Tragion (Frankfort plane)
   ![OpisthionBasion](pictures/OpisthionBasion.jpg "OpisthionBasion") ![FrankfurtPlane](pictures/FrankfurtPlane2.jpg "FrankfurtPlane")
-- Define the skull local CS as the following; use the matlab code [SetupLocalCS_Skull.m](SetupLocalCS_Skull.m) to transform the skull and mandible obj files into the defined skull local CS.   
+- Define the skull local CS (as following); use the matlab code [SetupLocalCS_Skull.m](SetupLocalCS_Skull.m) to transform the skull and mandible obj files into the defined skull local CS.   
   - Origin: at center of foramen magnum (midpoint from basion to opithion); 
   - X-axis:  parallel to the Frankfort plane (line passing through orbit and tragus), pointing anteriorly
   - In the CT CS:  the sagittal plane looks fine  defined by Y Z  plane
 
 **4. Transform the hyoid bone into the its local CS**
-  -  Define the hyoid local CS:
+  -  Define the hyoid local CS (as following); use the matlab code [SetupLocalCS_Hyoid.m](SetupLocalCS_Hyoid.m) to transform the hyoid into its defined local CS.
   	  - Origin: the most anterior-superior point (H1)
 	  - axis: passing through H1 and H2, pointing anteriorly
 	  - Y axis: perpendicular to X axis, pointing cephalad
@@ -46,4 +46,4 @@
 ![Xray_hyoidMarks](pictures/Xray_hyoidMarks_small.png "Xray_hyoidMarks") 
 ![HyoidBone](pictures/Hyoid_muscleAttachments.jpg "HyoidBone")
 
-**5. Adjust shoulder posture (clavicle and scapular bones) to be "neutral" posture**
+**5. Adjust shoulder posture (clavicle and scapular bones) to be a "neutral" posture**
