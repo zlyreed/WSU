@@ -62,3 +62,5 @@
        - Obtain the origin location: Sternoclaviculare (in T1 CS:  Sternoclaviculare_L=0.0688528, -0.0197483, -0.021618; Sternoclaviculare_R=0.0721, -0.013471, 0.0297133).
        - Obtain the rotation angle about Z axis to make Y axis vertical (the angle was the T1 CS tilting angle based on M020)
   -  Adjust Scapula
+  
+  Notes: referring to the old notes"\\cdc.gov\private\L505\lwf5\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"
