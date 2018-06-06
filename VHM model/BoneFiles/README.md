@@ -18,7 +18,7 @@
     - Load two T1 models
     - Go to "Edit"--> "Align"-->  pick T1_localCS model as ""glue mesh here" to serve as a base --> pick T1_CTCS model and click "Point Based Glueing" --> double click to select corresponding points on both models --> "process" --> "File"/"Save Projec"/save as "Align Project (*.aln)": [T1_alignment.aln](T1_alignment.aln)
     - From T1_meter.obj (CT CS) to T1.obj (local CS): 
-      - Transformation matrix= (-0.003448 -0.895853 0.444338 0.080804;-0.020896 -0.444179 -0.895694 -0.175250;0.999776 -0.012374 -0.017188 -0.001771; 0.000000 0.000000 0.000000 1.000000).
+    - Transformation matrix= (-0.003448 -0.895853 0.444338 0.080804;-0.020896 -0.444179 -0.895694 -0.175250;0.999776 -0.012374 -0.017188 -0.001771; 0.000000 0.000000 0.000000 1.000000).
       - Angles (deg; X,Y,Z)=91.0993   26.3810   90.2205; Translations (m;X,Y,Z)=0.0808   -0.1752   -0.0018.
     - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
     
@@ -67,7 +67,7 @@
   -  Adjust Clavicle
      - Create a local CS for clavicle in OpenSim (in order to rotate the clavicle to horizontal)
        - Obtain the origin location: Sternoclaviculare;
-       - Obtain the rotation angle about Z axis to make Y axis vertical (the angle was the T1 CS tilting angle=-31.6324088956378 deg/ -0.552089685566 radian; based on M020)
+       - Obtain the rotation angle about Z axis to make Y axis vertical (In M020, the T1 CS tilting angle=-31.6324088956378 deg/ -0.552089685566 radian)
   -  Adjust Scapula
   
  
