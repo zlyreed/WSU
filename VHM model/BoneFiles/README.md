@@ -51,7 +51,7 @@
   
      ![shoulder](pictures/Shoulder_landmarks.jpg "Shoulder_landmarks")
 
-  |  Landmarks        |	 X       |  Y        |	 Z        |
+  |Landmarks(in T1 CS)|	 X (m)   |  Y (m)    |	 Z (m)    |
   | -------------     |:--------:| ---------:| ----------:|
   |Sternoclaviculare_L|	0.0688528 |-0.0197483|	-0.021618 |
   |Sternoclaviculare_R|	0.0721    |-0.013471 |	0.0297133 |
@@ -68,4 +68,4 @@
        - Obtain the rotation angle about Z axis to make Y axis vertical (the angle was the T1 CS tilting angle based on M020)
   -  Adjust Scapula
   
-  Notes: referring to the old notes"\\cdc.gov\private\L505\lwf5\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"; the landmarks on clavicle and scapula were adjusted.
+  Notes: referring to the old notes"\\cdc.gov\private\L505\lwf5\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"; the landmarks of TS on the scapula were adjusted.
