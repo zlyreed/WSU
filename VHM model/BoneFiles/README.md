@@ -61,11 +61,13 @@
   |TrigonumScapulae_R |	-0.0752219|-0.0606393|	 0.0866429|
   |AngulusInferior_L  |	-0.0323772|-0.181023 |	-0.112415 |
   |AngulusInferior_R  |	-0.0328636|-0.170965 |	0.114151  |
-
+ 
+  Notes: referring to the old notes"\\cdc.gov\private\L505\lwf5\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"; the landmarks TS  were adjusted.
+  
   -  Adjust Clavicle
      - Create a local CS for clavicle in OpenSim (in order to rotate the clavicle to horizontal)
        - Obtain the origin location: Sternoclaviculare;
        - Obtain the rotation angle about Z axis to make Y axis vertical (the angle was the T1 CS tilting angle=-31.6324088956378 deg/ -0.552089685566 radian; based on M020)
   -  Adjust Scapula
   
-  Notes: referring to the old notes"\\cdc.gov\private\L505\lwf5\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"; the landmarks TS  were adjusted.
+ 
