@@ -51,14 +51,16 @@
   
      ![shoulder](pictures/Shoulder_landmarks.jpg "Shoulder_landmarks")
 
- | Sternoclaviculare_L|	0.0688528|	-0.0197483|	-0.021618|
-  |Sternoclaviculare_R|	0.0721| -0.013471|	0.0297133|
-  |Acromioclaviulare_L|	0.00392632|	0.0105555|	-0.167512|
- | Acromioclaviulare_R|	-0.0121487|	0.0228319|	0.175819|
-  |TrigonumScapulae_L|	-0.0716545|	-0.0666139|	-0.0981077|
-  |TrigonumScapulae_R|	-0.0750226|	-0.056078|	0.0961058|
-  |AngulusInferior_L|	-0.0323772|	-0.181023|	-0.112415|
- | AngulusInferior_R|	-0.0328636|	-0.170965|	0.114151|
+  |  Landmarks        |	 X       |  Y        |	 Z        |
+  | -------------     |:--------:| ---------:| ----------:|
+  |Sternoclaviculare_L|	0.0688528 |-0.0197483|	-0.021618 |
+  |Sternoclaviculare_R|	0.0721    |-0.013471 |	0.0297133 |
+  |Acromioclaviulare_L|	0.00392632| 0.0105555|	-0.167512 |
+  |Acromioclaviulare_R|	-0.0121487| 0.0228319|	0.175819  |
+  |TrigonumScapulae_L |	-0.0716545|-0.0666139|	-0.0981077|
+  |TrigonumScapulae_R |	-0.0750226|-0.056078 |	0.0961058 |
+  |AngulusInferior_L  |	-0.0323772|-0.181023 |	-0.112415 |
+  |AngulusInferior_R  |	-0.0328636|-0.170965 |	0.114151  |
 
   -  Adjust Clavicle
      - Create a local CS for clavicle in OpenSim (in order to rotate the clavicle to horizontal)
