@@ -57,8 +57,8 @@
   |Sternoclaviculare_R|	0.0721    |-0.013471 |	0.0297133 |
   |Acromioclaviulare_L|	0.00392632| 0.0105555|	-0.167512 |
   |Acromioclaviulare_R|	-0.0121487| 0.0228319|	0.175819  |
-  |TrigonumScapulae_L |	-0.0716545|-0.0666139|	-0.0981077|
-  |TrigonumScapulae_R |	-0.0750226|-0.056078 |	0.0961058 |
+  |TrigonumScapulae_L |	-0.0680862|-0.0648523|	-0.0963781|
+  |TrigonumScapulae_R |	-0.0752219|-0.0606393|	 0.0866429|
   |AngulusInferior_L  |	-0.0323772|-0.181023 |	-0.112415 |
   |AngulusInferior_R  |	-0.0328636|-0.170965 |	0.114151  |
 
@@ -68,4 +68,4 @@
        - Obtain the rotation angle about Z axis to make Y axis vertical (the angle was the T1 CS tilting angle based on M020)
   -  Adjust Scapula
   
-  Notes: referring to the old notes"\\cdc.gov\private\L505\lwf5\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"
+  Notes: referring to the old notes"\\cdc.gov\private\L505\lwf5\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"; the landmarks on clavicle and scapula were adjusted.
