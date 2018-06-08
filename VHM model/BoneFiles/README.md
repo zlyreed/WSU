@@ -39,7 +39,7 @@
 **4. Transform the hyoid bone into the its local CS**
   -  Define the hyoid local CS (as following); use the matlab code [SetupLocalCS_Hyoid.m](SetupLocalCS_Hyoid.m) to transform the hyoid into its defined local CS.
   	  - Origin: the most anterior-superior point (H1)
-	  - axis: passing through H1 and H2, pointing anteriorly
+	  - X axis: passing through H1 and H2, pointing anteriorly
 	  - Y axis: perpendicular to X axis, pointing cephalad
 	  
 ![Xray_hyoidMarks](pictures/Xray_hyoidMarks_small.png "Xray_hyoidMarks") 
@@ -83,7 +83,8 @@ endjoint.
 
      - transform the origin of the clavicle bone to Sternoclaviculare_L: use SetupLocalCS_Clavicle.m and MeshLab(to get obj files with norm info).
      - put the new clavicle bone file into aux_clavicelL CS (in OpenSim)
-       - put back into the original CT posture--in joint file: segments aux_clavicelL clavicleL; ...;r1  constant 0.000000; r2  constant 0.000000; r3  constant -31.6324088956378); notes: obtain landmarks of clavicle (originally in T1 CS) into the new clavicle CS in OpenSim).
+       - put the clavicle (with new local CS) back to the original CT posture--in joint file: segments aux_clavicelL clavicleL; ...;r1  constant 0.000000; r2  constant 0.000000; r3  constant -31.6324088956378); 
+         - notes: obtain the landmarks of clavicle (Sternoclaviculare and Acromioclaviulare; originally in T1 CS) in the new clavicle CS (in OpenSim).
        - set clavicle  close to horizontal (the angle wrt X axis was calculated based on SC-AC angle in aux_clavicelL CS; left clavicle: -22.306 deg/-0.38931 rad; right clavilce: 27.20216 deg/0.474767)--in joint file: segments aux_clavicelL clavicleL; ...; r1  constant -22.306; r2  constant 0.000000; r3  constant -31.6324088956378);
      
      
