@@ -81,10 +81,10 @@ r2  constant 0.000000;
 r3  constant 31.6324088956378;
 endjoint.
 
-     - transform the origin of the clavicle bone to Sternoclaviculare_L: use SetupLocalCS_Clavicle.m and MeshLab(to get obj files with norm info).
-     - put the new clavicle bone file into aux_clavicelL CS (in OpenSim)
+     - Transform the origin of the clavicle bone to Sternoclaviculare_L: use SetupLocalCS_Clavicle.m and MeshLab(to get obj files with norm info).
+     - Put the new clavicle bone file into aux_clavicelL CS (in OpenSim)
        - put the clavicle (with new local CS) back to the original CT posture--in joint file: segments aux_clavicelL clavicleL; ...;r1  constant 0.000000; r2  constant 0.000000; r3  constant -31.6324088956378); 
-         - notes: obtain the landmarks of clavicle (Sternoclaviculare and Acromioclaviulare; originally in T1 CS) in the new clavicle CS (in OpenSim).
+         - notes: obtain the landmarks of clavicle (Sternoclaviculare and Acromioclaviulare; originally in T1 CS) in the new clavicle CS (in OpenSim): in clavicleL CS, Sternoclaviculare_L=0 0 0, Acromioclaviulare_L=-0.0649265 0.0303038 -0.145894;in clavicleR CS, Sternoclaviculare_R=0 0 0, Acromioclaviulare_R=-0.0842487 0.0363029 0.146106.	 
        - set clavicle  close to horizontal (the angle wrt X axis was calculated based on SC-AC angle in aux_clavicelL CS; left clavicle: -22.306 deg/-0.38931 rad; right clavilce: 27.20216 deg/0.474767)--in joint file: segments aux_clavicelL clavicleL; ...; r1  constant -22.306; r2  constant 0.000000; r3  constant -31.6324088956378);
      
      
