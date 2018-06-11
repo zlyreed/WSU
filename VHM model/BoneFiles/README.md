@@ -78,5 +78,10 @@
      
      
   -  Adjust Scapula (joint linkage: clavicleL/clavicleR-->aux_scapulaL/aux_scapulaR (translation and rotation) --> scapulaL/scapulaR)
+     - Translation: move the origin to Acromioclaviulare_L or Acromioclaviulare_R
+     - Rotation
+	   - Record three landmarks (AC, TS, AI) in clavicleL or clavicelR CS to form the scapular plane
+     
+     - notes: Check the obj file in MeshLab. When necessary, flip the normals: MeshLab-->"Filters"--> "Normals,Curvatures and Orientation"--> "Invert Faces Orientation" (only check "Force Flip')
   
  
