@@ -63,7 +63,7 @@
   Notes: referring to the old notes"...\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"; the landmarks TS  were adjusted.
   
   -  Adjust Clavicle (joint links: T1--> aux_clavicelL or aux_clavicelR (Translation only; XY: sagittal plane, Y: vertical up) --> Rotation only; clavicelL or clavicelR)
-     - Create an auxiliary object for clavicle (e.g., "aux_clavicelL" here) in OpenSim (in order to rotate the clavicle to horizontal):"VHM_forShoulderNeutralPosture_clavicle0.jnt"
+     - Create an auxiliary object for clavicle (e.g., "aux_clavicelL" here) in OpenSim (in order to rotate the clavicle to horizontal): [VHM_forShoulderNeutralPosture_clavicle0.jnt](VHM_forShoulderNeutralPosture_clavicle0.jnt)
        - the origin of "aux_clavicelL": Sternoclaviculare_L;
        - Obtain the rotation angle about Z axis to make its Y axis vertical: 31.6324088956378 deg (In M020, the T1 CS tilting angle=-31.6324088956378 deg/ -0.552089685566 radian)
        - notes in joint file: 
@@ -71,7 +71,7 @@
        beginjoint aux_clavicelL;  segments **T1** aux_clavicelL;  order t r3 r1 r2; axis1 1.000000 0.000000 0.000000; axis2 0.000000 1.000000 0.000000; axis3 0.000000 0.000000 1.000000; tx  constant 0.0688528; ty  constant -0.0197483; tz  constant -0.021618; r1  constant 0.000000; r2  constant 0.000000; r3  constant 31.6324088956378; endjoint.
 
      - Transform the origin of the clavicle bone to Sternoclaviculare_L: use [SetupLocalCS_Clavicle.m](SetupLocalCS_Clavicle.m) and MeshLab(to get obj files with norm info).
-     - Put the new clavicle bone file into aux_clavicelL CS (in OpenSim): "VHM_forShoulderNeutralPosture_clavicle1.jnt"
+     - Put the new clavicle bone file into aux_clavicelL CS (in OpenSim): [VHM_forShoulderNeutralPosture_clavicle1.jnt](VHM_forShoulderNeutralPosture_clavicle1.jnt)
        - put the clavicle (with new local CS) back to the original CT posture--in joint file: segments aux_clavicelL clavicleL; ...;r1  constant 0.000000; r2  constant 0.000000; r3  constant -31.6324088956378); 
          - notes: obtain the landmarks of clavicle (Sternoclaviculare and Acromioclaviulare; originally in T1 CS) in the new clavicle CS (in OpenSim): in clavicleL CS, Sternoclaviculare_L=0 0 0, Acromioclaviulare_L=-0.0649265 0.0303038 -0.145894;in clavicleR CS, Sternoclaviculare_R=0 0 0, Acromioclaviulare_R=-0.0842487 0.0363029 0.146106.	 
        - set clavicle  close to horizontal (the angle wrt X axis was calculated based on SC-AC angle in aux_clavicelL CS; left clavicle: -22.306 deg/-0.38931 rad; right clavilce: 27.20216 deg/0.474767)--in joint file: segments **aux_clavicelL** clavicleL; ...; r1  constant -22.306; r2  constant 0.000000; r3  constant -31.6324088956378);

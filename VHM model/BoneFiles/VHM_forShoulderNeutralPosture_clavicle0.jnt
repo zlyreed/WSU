@@ -1,0 +1,885 @@
+/****************************************************/
+/* Output joint file made by SIMM 7.0      */
+/* Name of input joint file:            */
+/****************************************************/
+
+name VHM_toAdjustShoulderPosture
+
+masscenter_visibility off
+inertia_visibility off
+marker_visibility on
+gravity -Y
+MV_gear 2.666667
+solver_accuracy 0.000100
+solver_method LM
+solver_max_iterations 100
+solver_joint_limits yes
+solver_orient_body no
+/* Window position is relative to the top left corner of the main
+ * SIMM window, with X going to the right, and Y going down.
+ */
+window_position 480 26
+window_size 518 473
+
+
+/*********************************************/
+/*          DYNAMIC PREFERENCES              */
+/*********************************************/
+
+/*********************************************/
+/*               SEGMENTS                    */
+/*********************************************/
+
+beginsegment ground
+endsegment
+
+
+
+beginsegment auxspine
+show_masscenter off
+show_inertia off
+endsegment
+
+
+beginsegment auxt1_new
+show_masscenter off
+show_inertia off
+endsegment
+
+
+
+beginsegment hyoid_bone
+bone Hyoid_meter_LocalCS_vnf.obj def_bone
+material my_bone
+scale 1 1 1
+endsegment
+
+
+beginsegment T1
+bone T1.obj def_bone
+material my_bone
+scale 1 1 1
+endsegment
+
+beginsegment T2T12
+bone T2_to_T12_meter_T1CS_vnf.obj def_bone
+material my_bone
+scale 1 1 1
+endsegment
+
+beginsegment ribcage
+bone Ribs_meter_T1CS_vnf.obj def_bone
+material my_bone
+scale 1 1 1
+endsegment
+
+beginsegment clavicleL
+bone Left_Clavicle_meter_T1CS_vnf.obj def_bone
+material my_bone
+scale 1 1 1
+endsegment
+
+beginsegment aux_clavicelL
+show_masscenter off
+show_inertia off
+endsegment
+
+beginsegment clavicleR
+bone Right_Clavicle_meter_T1CS_vnf.obj def_bone
+material my_bone
+scale 1 1 1
+endsegment
+
+beginsegment aux_clavicelR
+show_masscenter off
+show_inertia off
+endsegment
+
+beginsegment scapulaL
+bone Left_Scapula_meter_T1CS_vnf.obj def_bone
+material my_bone
+scale 1 1 1
+endsegment
+
+
+beginsegment scapulaR
+bone Right_Scapula_meter_T1CS_vnf.obj def_bone
+material my_bone
+scale 1 1 1
+endsegment
+
+/*
+beginsegment aux_scapulaL
+show_masscenter off
+show_inertia off
+endsegment
+
+beginsegment aux_scapulaR
+show_masscenter off
+show_inertia off
+endsegment
+*/
+
+beginsegment skull
+bone Skull_meter_LocalCS_vnf.obj def_bone
+show_masscenter off
+show_inertia off
+material my_bone
+scale 1 1 1
+endsegment
+
+beginsegment jaw
+bone Mandible_meter_LocalCS_vnf.obj def_bone
+show_masscenter off
+show_inertia off
+material my_bone
+scale 1 1 1
+endsegment
+
+beginsegment aux1
+show_masscenter off
+show_inertia off
+material my_bone
+endsegment
+
+beginsegment aux2
+show_masscenter off
+show_inertia off
+material my_bone
+endsegment
+
+beginsegment aux3
+show_masscenter off
+show_inertia off
+material my_bone
+endsegment
+
+beginsegment aux4
+show_masscenter off
+show_inertia off
+material my_bone
+endsegment
+
+beginsegment aux5
+show_masscenter off
+show_inertia off
+material my_bone
+endsegment
+
+beginsegment aux6
+show_masscenter off
+show_inertia off
+material my_bone
+endsegment
+
+beginsegment aux7
+show_masscenter off
+show_inertia off
+material my_bone
+endsegment
+
+beginsegment auxt1
+show_masscenter off
+show_inertia off
+material my_bone
+endsegment
+
+beginsegment cerv1
+bone C1.obj def_bone
+material my_bone
+endsegment
+
+beginsegment cerv2
+bone C2.obj def_bone
+material my_bone
+endsegment
+
+beginsegment cerv3
+bone C3.obj def_bone
+material my_bone
+endsegment
+
+beginsegment cerv4
+bone C4.obj def_bone
+material my_bone
+endsegment
+
+beginsegment cerv5
+bone C5.obj def_bone
+material my_bone
+endsegment
+
+beginsegment cerv6
+bone C6.obj def_bone
+material my_bone
+endsegment
+
+beginsegment cerv7
+bone C7.obj def_bone
+material my_bone
+endsegment
+
+
+
+
+
+/*********************************************/
+/*                JOINTS                     */
+/*********************************************/
+
+beginjoint auxspine
+segments ground auxspine
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  constant 0.000000
+ty  constant 0.000000
+tz  constant 0.000000
+r1  function f81(gndroll)
+r2  function f82(gndyaw)
+r3  function f83(gndpitch)
+endjoint
+
+
+beginjoint auxt1_new
+segments auxspine auxt1_new
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  constant 0.000000
+ty  constant 0.000000
+tz  constant 0.000000
+r1  constant 0.000000
+r2  constant 0.000000
+r3  constant -31.6324088956378
+endjoint
+
+
+
+
+beginjoint	t1jnt														
+segments	auxt1_new	T1													
+order	t	r1	r2	r3											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	0.0000													
+ty	constant	0.0000													
+tz	constant	0.0000													
+r1	constant	0.0000													
+r2	constant	0.0000													
+r3	constant	0													
+endjoint		
+
+
+beginjoint	t2t12jnt														
+segments	T1	T2T12													
+order	t	r1	r2	r3											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	0.0000													
+ty	constant	0.0000													
+tz	constant	0.0000													
+r1	constant	0.0000													
+r2	constant	0.0000													
+r3	constant	0.0000													
+endjoint				
+
+
+beginjoint ribcagejnt
+segments T1 ribcage
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  constant 0.000000
+ty  constant 0.000000
+tz  constant 0.000000
+r1  constant 0.000000
+r2  constant 0.000000
+r3  constant 0
+endjoint
+
+
+beginjoint clavicleLjnt
+segments T1 clavicleL
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  constant 0.000000
+ty  constant 0.000000
+tz  constant 0.000000
+r1  constant 0.000000
+r2  constant 0.000000
+r3  constant 0
+endjoint
+
+beginjoint clavicleRjnt
+segments T1 clavicleR
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  constant 0.000000
+ty  constant 0.000000
+tz  constant 0.000000
+r1  constant 0.000000
+r2  constant 0.000000
+r3  constant 0
+endjoint
+
+beginjoint aux_clavicelL
+segments T1 aux_clavicelL  
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  constant 0.0721
+ty  constant -0.013471
+tz  constant 0.0297133
+r1  constant 0.000000
+r2  constant 0.000000
+r3  constant 31.6324088956378
+endjoint
+
+beginjoint aux_clavicelR
+segments T1 aux_clavicelR  
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  constant 0.0688528
+ty  constant -0.0197483
+tz  constant -0.021618
+r1  constant 0.000000
+r2  constant 0.000000
+r3  constant 31.6324088956378
+endjoint
+
+beginjoint scapulaLjnt
+segments clavicleL scapulaL
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  constant 0.000000
+ty  constant 0.000000
+tz  constant 0.000000
+r1  constant 0.000000
+r2  constant 0.000000
+r3  constant 0
+endjoint
+
+
+
+beginjoint scapulaRjnt
+segments clavicleR scapulaR
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  constant 0.000000
+ty  constant 0.000000
+tz  constant 0.000000
+r1  constant 0.000000
+r2  constant 0.000000
+r3  constant 0
+endjoint
+
+
+
+beginjoint	auxt1jnt														
+segments	auxspine	auxt1													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	0.0000													
+ty	constant	0.0000													
+tz	constant	0.0000													
+r1	function	f71(roll)													
+r2	function	f72(yaw)													
+r3	function	f73(pitch)													
+endjoint															
+
+
+beginjoint	cerv7jnt														
+segments	auxt1	cerv7													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	0.0048													
+ty	constant	0.0114													
+tz	constant	0													
+r1	constant	0													
+r2	constant	0													
+r3	constant	-30.38293001													
+endjoint															
+															
+beginjoint	aux7jnt														
+segments	cerv7	aux7													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0011													
+ty	constant	0.0070													
+tz	constant	0													
+r1	function	f61(roll)													
+r2	function	f62(yaw)													
+r3	function	f63(pitch)													
+endjoint															
+															
+beginjoint	cerv6jnt														
+segments	aux7	cerv6													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0033													
+ty	constant	0.0116													
+tz	constant	0													
+r1	constant	0													
+r2	constant	0													
+r3	constant	10.22987796													
+endjoint															
+															
+beginjoint	aux6jnt														
+segments	cerv6	aux6													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0021													
+ty	constant	0.0039													
+tz	constant	0													
+r1	function	f51(roll)													
+r2	function	f52(yaw)													
+r3	function	f53(pitch)													
+endjoint															
+															
+beginjoint	cerv5jnt														
+segments	aux6	cerv5													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0013													
+ty	constant	0.0150													
+tz	constant	0													
+r1	constant	0													
+r2	constant	0													
+r3	constant	-1.014993646													
+endjoint															
+															
+beginjoint	aux5jnt														
+segments	cerv5	aux5													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0025													
+ty	constant	0.0014													
+tz	constant	0													
+r1	function	f41(roll)													
+r2	function	f42(yaw)													
+r3	function	f43(pitch)													
+endjoint															
+															
+beginjoint	cerv4jnt														
+segments	aux5	cerv4													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0014													
+ty	constant	0.0172													
+tz	constant	0													
+r1	constant	0													
+r2	constant	0													
+r3	constant	-1.033112858													
+endjoint															
+															
+beginjoint	aux4jnt														
+segments	cerv4	aux4													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0034													
+ty	constant	0.0003													
+tz	constant	0													
+r1	function	f31(roll)													
+r2	function	f32(yaw)													
+r3	function	f33(pitch)													
+endjoint															
+															
+beginjoint	cerv3jnt														
+segments	aux4	cerv3													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0008													
+ty	constant	0.0175													
+tz	constant	0													
+r1	constant	0													
+r2	constant	0													
+r3	constant	4.365626264													
+endjoint															
+															
+beginjoint	aux3jnt														
+segments	cerv3	aux3													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0042													
+ty	constant	-0.0024													
+tz	constant	0													
+r1	function	f21(roll)													
+r2	function	f22(yaw)													
+r3	function	f23(pitch)													
+endjoint															
+															
+beginjoint	cerv2jnt														
+segments	aux3	cerv2													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0001													
+ty	constant	0.0229													
+tz	constant	0													
+r1	constant	0													
+r2	constant	0													
+r3	constant	1.023391903													
+endjoint															
+															
+beginjoint	aux2jnt														
+segments	cerv2	aux2													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	0.0014													
+ty	constant	0.0211													
+tz	constant	0													
+r1	function	f11(roll)													
+r2	function	f12(yaw)													
+r3	function	f13(pitch)													
+endjoint															
+															
+beginjoint	cerv1jnt														
+segments	aux2	cerv1													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	-0.0117													
+ty	constant	-0.0062													
+tz	constant	0													
+r1	constant	0													
+r2	constant	0													
+r3	constant	24.75384162													
+endjoint															
+															
+beginjoint	aux1jnt														
+segments	cerv1	aux1													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	0.0000													
+ty	constant	0.0277													
+tz	constant	0													
+r1	function	f1(roll)													
+r2	function	f2(yaw)													
+r3	function	f3(pitch)													
+endjoint															
+															
+beginjoint	skulljnt														
+segments	aux1	skull													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	0.0016													
+ty	constant	-0.0108													
+tz	constant	0													
+r1	constant	0													
+r2	constant	0													
+r3	constant	-6.50570885													
+endjoint															
+															
+beginjoint	jawjnt														
+segments	aux1	jaw													
+order	t	r3	r1	r2											
+axis1	1	0	0												
+axis2	0	1	0												
+axis3	0	0	1												
+tx	constant	0.0016													
+ty	constant	-0.0108													
+tz	constant	0													
+r1	constant	0													
+r2	constant	0													
+r3	constant	-6.50570885													
+endjoint
+
+beginjoint hyoid_bone  /* hyoid bone in pitch direction */
+segments cerv3 hyoid_bone
+order t r3 r1 r2
+axis1 1.000000 0.000000 0.000000
+axis2 0.000000 1.000000 0.000000
+axis3 0.000000 0.000000 1.000000
+tx  function f91(pitch)
+ty  function f92(pitch)
+tz  constant 0.000000
+r1  constant 0.000000
+r2  constant 0.000000
+r3  function f93(pitch)
+endjoint
+
+
+
+/*********************************************/
+/*              GENCOORDS                    */
+/*********************************************/
+
+begingencoord gndroll
+range -180.000000 180.000000
+keys r_key rightmouse_button
+visible yes
+endgencoord
+
+begingencoord gndyaw
+range -180.000000 180.000000
+keys y_key rightmouse_button
+visible yes
+endgencoord
+
+begingencoord gndpitch
+range -180.000000 180.000000
+keys p_key rightmouse_button
+visible yes
+endgencoord
+
+begingencoord roll
+range -40.000000 40.000000
+visible yes
+endgencoord
+
+begingencoord yaw
+range -75.000000 75.000000
+visible yes
+endgencoord
+
+begingencoord pitch
+range -50.000000 72.000000
+visible yes
+endgencoord
+
+
+
+
+/*********************************************/
+/*             MODEL POSES                   */
+/*********************************************/
+
+
+
+/*********************************************/
+/*               FUNCTIONS                   */
+/*********************************************/
+beginfunction f91
+(-100.000000,  0.023177)
+( 100.000000,   0.060395)
+endfunction
+
+beginfunction f92
+(-100.000000,  -0.021775183)
+( 100.000000, -0.004604417)
+endfunction
+
+beginfunction f93
+(-100.000000,  8.203467922)
+( 100.000000, 5.824470163)
+endfunction
+
+
+beginfunction f1
+(-100.000000,  -8.200000)
+( 100.000000,   8.200000)
+endfunction
+
+beginfunction f2
+(-100.000000,  -6.500000)
+( 100.000000,   6.500000)
+endfunction
+
+beginfunction f3
+(-100.000000, -18.400000)
+( 100.000000,  18.400000)
+endfunction
+
+beginfunction f11
+(-100.000000,  -8.200000)
+( 100.000000,   8.200000)
+endfunction
+
+beginfunction f12
+(-100.000000, -51.900000)
+( 100.000000,  51.900000)
+endfunction
+
+beginfunction f13
+(-100.000000, -14.700000)
+( 100.000000,  14.700000)
+endfunction
+
+beginfunction f21
+(-100.000000, -16.400000)
+( 100.000000,  16.400000)
+endfunction
+
+beginfunction f22
+(-100.000000,  -3.900000)
+( 100.000000,   3.900000)
+endfunction
+
+beginfunction f23
+(-100.000000,  -7.400000)
+( 100.000000,   7.400000)
+endfunction
+
+beginfunction f31
+(-100.000000, -18.000000)
+( 100.000000,  18.000000)
+endfunction
+
+beginfunction f32
+(-100.000000,  -9.100000)
+( 100.000000,   9.100000)
+endfunction
+
+beginfunction f33
+(-100.000000, -11.000000)
+( 100.000000,  11.000000)
+endfunction
+
+beginfunction f41
+(-100.000000, -18.000000)
+( 100.000000,  18.000000)
+endfunction
+
+beginfunction f42
+(-100.000000,  -9.100000)
+( 100.000000,   9.100000)
+endfunction
+
+beginfunction f43
+(-100.000000, -14.700000)
+( 100.000000,  14.700000)
+endfunction
+
+beginfunction f51
+(-100.000000, -13.100000)
+( 100.000000,  13.100000)
+endfunction
+
+beginfunction f52
+(-100.000000,  -9.100000)
+( 100.000000,   9.100000)
+endfunction
+
+beginfunction f53
+(-100.000000, -14.700000)
+( 100.000000,  14.700000)
+endfunction
+
+beginfunction f61
+(-100.000000, -11.500000)
+( 100.000000,  11.500000)
+endfunction
+
+beginfunction f62
+(-100.000000,  -7.800000)
+( 100.000000,   7.800000)
+endfunction
+
+beginfunction f63
+(-100.000000, -12.500000)
+( 100.000000,  12.500000)
+endfunction
+
+beginfunction f71
+(-100.000000,  -6.600000)
+( 100.000000,   6.600000)
+endfunction
+
+beginfunction f72
+(-100.000000,  -2.600000)
+( 100.000000,   2.600000)
+endfunction
+
+beginfunction f73
+(-100.000000,  -6.600000)
+( 100.000000,   6.600000)
+endfunction
+
+beginfunction f81
+(-180.000000,-180.000000)
+( 180.000000, 180.000000)
+endfunction
+
+beginfunction f82
+(-180.000000,-180.000000)
+( 180.000000, 180.000000)
+endfunction
+
+beginfunction f83
+(-180.000000,-180.000000)
+( 180.000000, 180.000000)
+endfunction
+
+
+/*********************************************/
+/*          MATERIALS AND COLORS             */
+/*********************************************/
+
+beginmaterial my_bone
+ambient 0.6000 0.6000 0.6000
+diffuse 0.6000 0.4500 0.4000
+specular 0.7000 0.5500 0.4000
+shininess 10.0000
+endmaterial
+
+
+/*********************************************/
+/*              MOTIONOBJECTS                 */
+/*********************************************/
+
+
+/*********************************************/
+/*              CAMERAS                      */
+/*********************************************/
+
+begincamera default
+1.0000 0.0000 0.0000 0.0000 
+0.0000 1.0000 0.0000 0.0000 
+0.0000 0.0000 1.0000 0.0000 
+0.0045 -0.0008 -0.1101 1.0000 
+endcamera
+
+/*********************************************/
+/*          CONTACT DETECTION INFO           */
+/*********************************************/
+
+begincontact
+endcontact
+
