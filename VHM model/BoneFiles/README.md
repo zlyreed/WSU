@@ -78,5 +78,9 @@
      
      
   -  Adjust Scapula (joint linkage: clavicleL/clavicleR-->aux_scapulaL/aux_scapulaR (translation and rotation) --> scapulaL/scapulaR)
+     - Translation
+     - Rotation
+     
+     - notes: Check the obj file in MeshLab. When necessary, flip the normals: MeshLab-->"Filters"--> "Normals,Curvatures and Orientation"--> "Invert Faces Orientation" (only check "Force Flip')
   
  
