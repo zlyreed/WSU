@@ -46,7 +46,9 @@
 
 **5. Adjust shoulder posture (clavicle and scapular bones) to be a "neutral" posture**
 
-**The local coordinate systems of Thorax, clavicle and spacula were referring to [Wu-2205_ISB recommendation](Wu-2205_ISB-shoulder joint.pdf)**; start on the file "VHM_forShoulderNeutralPosture_0.osim"
+The local coordinate systems of Thorax, clavicle and spacula:
+--- refers to [Wu-2005_ISB recommendation](Wu-2005_ISB-shoulder joint.pdf); 
+--- based on the file "VHM_forShoulderNeutralPosture_0.osim"
 
   -  Obtain bony landmarks in T1 CS (in OpenSim): 
   
