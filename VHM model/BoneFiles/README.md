@@ -19,7 +19,7 @@
     - Go to "Edit"--> "Align"-->  pick T1_localCS model as ""glue mesh here" to serve as a base --> pick T1_CTCS model and click "Point Based Glueing" --> double click to select corresponding points on both models --> "process" --> "File"/"Save Projec"/save as "Align Project (*.aln)": [T1_alignment.aln](T1_alignment.aln)
     - From T1_meter.obj (CT CS) to T1.obj (local CS): 
     - Transformation matrix= (-0.003448 -0.895853 0.444338 0.080804;-0.020896 -0.444179 -0.895694 -0.175250;0.999776 -0.012374 -0.017188 -0.001771; 0.000000 0.000000 0.000000 1.000000).
-      - Angles (deg; X,Y,Z)=91.0993   26.3810   90.2205; Translations (m;X,Y,Z)=0.0808   -0.1752   -0.00    - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
+- Angles (deg; X,Y,Z)=91.0993   26.3810   90.2205; Translations (m;X,Y,Z)=0.0808   -0.1752   -0.00    - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
     
 - Apply the same transformation (from CT global CS to T1 local CS) to other bony structures below T1 to mantiain the original posture in CT images (we don't know their real  neutral postures)
   - T2 to T12: use [Obj_TransformAndSave.m](Obj_TransformAndSave.m), which calls functions [readObj_vf.m](functions/readObj_vf.m), [applyTransformation.m](functions/applyTransformation.m), and [writeObj_vf.m](functions/writeObj_vf.m) --> output a new obj file in T1 local CS (T2_to_T12_meter_T1CS.obj)
@@ -45,22 +45,33 @@
 ![HyoidBone](pictures/Hyoid_muscleAttachments.jpg "HyoidBone")
 
 **5. Adjust shoulder posture (clavicle and scapular bones) to be a "neutral" posture**
+
+**The local coordinate systems of Thorax, clavicle and spacula were referring to [Wu-2205_ISB recommendation](Wu-2205_ISB-shoulder joint.pdf)**; start on the file "VHM_forShoulderNeutralPosture_0.osim"
+
   -  Obtain bony landmarks in T1 CS (in OpenSim): 
   
      ![shoulder](pictures/Shoulder_landmarks.jpg "Shoulder_landmarks")
 
-  |Landmarks(in T1 CS)|	 X (m)   |  Y (m)    |	 Z (m)    |
-  | -------------     |:--------:| ---------:| ----------:|
-  |Sternoclaviculare_L|	0.0688528 |-0.0197483|	-0.021618 |
-  |Sternoclaviculare_R|	0.0721    |-0.013471 |	0.0297133 |
-  |Acromioclaviulare_L|	0.00392632| 0.0105555|	-0.167512 |
-  |Acromioclaviulare_R|	-0.0121487| 0.0228319|	0.175819  |
-  |TrigonumScapulae_L |	-0.0680862|-0.0648523|	-0.0963781|
-  |TrigonumScapulae_R |	-0.0752219|-0.0606393|	 0.0866429|
-  |AngulusInferior_L  |	-0.0323772|-0.181023 |	-0.112415 |
-  |AngulusInferior_R  |	-0.0328636|-0.170965 |	0.114151  |
- 
+  |Landmarks(in T1 CS)|	 X (m)   |  Y (m)     |	 Z (m)    |
+  | -------------     |:--------:| ----------:| ---------:|
+  |Sternoclaviculare_L|	0.0688528 |-0.0197483 |	-0.021618 |
+  |Sternoclaviculare_R|	0.0721    |-0.013471  |	0.0297133 |
+  |Acromioclaviulare_L|	0.00392632| 0.0105555 |	-0.167512 |
+  |Acromioclaviulare_R|	-0.0121487| 0.0228319 |	0.175819  |
+  |TrigonumScapulae_L |	-0.0680862|-0.0648523 |	-0.0963781|
+  |TrigonumScapulae_R |	-0.0752219|-0.0606393 |	 0.0866429|
+  |AngulusInferior_L  |	-0.0323772|-0.181023  |	-0.112415 |
+  |AngulusInferior_R  |	-0.0328636|-0.170965  | 0.114151  |
+  |AngulusAcromialis_L|	-0.0247613|-0.00506821|	 -0.19215 |
+  |AngulusAcromialis_R|	-0.0394764| -0.0103739|	 0.18265  |
+  |C7_Spinosus        |	-0.0529946| -0.011114 |-0.00383815|
+  |T8_Spinosus        |-0.00182668| -0.226247 |0.00186527 |
+  |SternalNotch       |0.0778201  | -0.0194623|0.00461227 |
+  
   Notes: referring to the old notes"...\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"; the landmarks TS  were adjusted.
+  
+  
+  
   
   -  Adjust Clavicle (joint links: T1--> aux_clavicelL or aux_clavicelR (Translation only; XY: sagittal plane, Y: vertical up) --> Rotation only; clavicelL or clavicelR)
      - Create an auxiliary object for clavicle (e.g., "aux_clavicelL" here) in OpenSim (in order to rotate the clavicle to horizontal): [VHM_forShoulderNeutralPosture_clavicle0.jnt](VHM_forShoulderNeutralPosture_clavicle0.jnt)
