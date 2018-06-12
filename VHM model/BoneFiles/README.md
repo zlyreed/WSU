@@ -1,4 +1,4 @@
-## The bone files are from AV and her group 
+0## The bone files are from AV and her group 
 ### Work done at WSU (bone models segmented in 3D doctor)
 - File types: .obj or .asc 
 - Cooridinate System (CS)
@@ -46,7 +46,7 @@
 
 **5. Adjust shoulder posture (clavicle and scapular bones) to be a "neutral" posture**
 
-**The local coordinate systems of Thorax, clavicle and spacula were referring to [Wu-2205_ISB recommendation](Wu-2205_ISB-shoulder joint.pdf)**; start on the file "VHM_forShoulderNeutralPosture_0.osim"
+The local coordinate systems of Thorax, clavicle and spacula were referring to [Wu-2005_ISB recommendation](Wu-2005_ISB-shoulder joint.pdf); start on the file "VHM_forShoulderNeutralPosture_0.osim"
 
   -  Obtain bony landmarks in T1 CS (in OpenSim): 
   
