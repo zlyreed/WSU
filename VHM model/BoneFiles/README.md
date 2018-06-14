@@ -73,7 +73,7 @@ The local coordinate systems of Thorax, clavicle and spacula:
   
   Notes: referring to the old notes"...\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"; the landmarks TS  were adjusted.
   
-  - Thorax CS: use [SetupLocalCS_ISB_Thorax.m](SetupLocalCS_ISB_Thorax.m) to calculate the location and orientation of auxThoraxjnt (in parent T1 CS)
+  - Thorax CS: use [SetupLocalCS_ISB_Thorax.m](SetupLocalCS_ISB_Thorax.m) to calculate the location and orientation of auxThoraxjnt (in parent T1 CS); see corresponding OpenSim joint file [VHM_forShoulderNeutralPosture_ISB_ThoraxCS.jnt](VHM_forShoulderNeutralPosture_ISB_ThoraxCS.jnt)
     - The origin: coincident with IJ.
 	- Y: The line connecting the midpoint between PX and T8 and the midpoint between IJ and C7, pointing upward.
 	- Z: The line perpendicular to the plane formed by IJ, C7, and the midpoint between PX and T8,pointing to the right.
