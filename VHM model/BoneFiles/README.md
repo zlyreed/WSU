@@ -81,8 +81,15 @@ The local coordinate systems of Thorax, clavicle and spacula:
 	
 	![Thorax CS](pictures/ThoraxCS.jpg "Thorax CS")
   
+  - Adjust Clavicle
+    - modify clavicle local CS (ISB, Wu-2005):
+	  - The origin: coincident with SC.
+	  - Z: The line connecting SC and AC, pointing to AC.
+	  - X: The line perpendicular to Z and Y, pointing forward. Note that the X-axis is defined with respect to the vertical axis of the thorax (Y axis) because only two bonylandmarks can be discerned at the clavicle.
+
+    ![Clavicle CS](pictures/ClavicleCS.jpg "Clavicle CS")
   
-  -  Adjust Clavicle (joint links: T1--> aux_clavicelL or aux_clavicelR (Translation only; XY: sagittal plane, Y: vertical up) --> Rotation only; clavicelL or clavicelR)
+  -  (old) Adjust Clavicle (joint links: T1--> aux_clavicelL or aux_clavicelR (Translation only; XY: sagittal plane, Y: vertical up) --> Rotation only; clavicelL or clavicelR)
      - Create an auxiliary object for clavicle (e.g., "aux_clavicelL" here) in OpenSim (in order to rotate the clavicle to horizontal): [VHM_forShoulderNeutralPosture_clavicle0.jnt](VHM_forShoulderNeutralPosture_clavicle0.jnt)
        - the origin of "aux_clavicelL": Sternoclaviculare_L;
        - Obtain the rotation angle about Z axis to make its Y axis vertical: 31.6324088956378 deg (In M020, the T1 CS tilting angle=-31.6324088956378 deg/ -0.552089685566 radian)
