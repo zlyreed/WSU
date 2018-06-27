@@ -92,9 +92,11 @@ The local coordinate systems of Thorax, clavicle and spacula:
 	
 	In matlab (notes here first), transform the clavicle bone first (to get "Left_Clavicle_meter_ISB-CS.obj"):
 	  - ZY plane: Z= the line connecting SC and AC; Y=the same Y axis as auxThoraxjnt
-	    -Bony landmarks (for left side): SC_L, AC_L, auxThorax_Y1 [0.0314184 0.0690799 0.0019348] and auxThorax_Y2 [0.0778201 -0.0194623 0.00461227] (in T1 CS);
-        -Use PCA to get a plane formed by those four bony landmarks.
+	    - Bony landmarks (for left side): SC_L, AC_L, auxThorax_Y1 [0.0314184 0.0690799 0.0019348] and auxThorax_Y2 [0.0778201 -0.0194623 0.00461227] (in T1 CS);
+            - Use PCA to get a plane formed by those four bony landmarks.
 		
+  
+  
   
   -  (old) Adjust Clavicle (joint links: T1--> aux_clavicelL or aux_clavicelR (Translation only; XY: sagittal plane, Y: vertical up) --> Rotation only; clavicelL or clavicelR)
      - Create an auxiliary object for clavicle (e.g., "aux_clavicelL" here) in OpenSim (in order to rotate the clavicle to horizontal): [VHM_forShoulderNeutralPosture_clavicle0.jnt](VHM_forShoulderNeutralPosture_clavicle0.jnt)
