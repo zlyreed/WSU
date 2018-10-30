@@ -19,7 +19,7 @@
     - Go to "Edit"--> "Align"-->  pick T1_localCS model as ""glue mesh here" to serve as a base --> pick T1_CTCS model and click "Point Based Glueing" --> double click to select corresponding points on both models --> "process" --> "File"/"Save Projec"/save as "Align Project (*.aln)": [T1_alignment.aln](T1_alignment.aln)
     - From T1_meter.obj (CT CS) to T1.obj (local CS): 
     - Transformation matrix= (-0.003448 -0.895853 0.444338 0.080804;-0.020896 -0.444179 -0.895694 -0.175250;0.999776 -0.012374 -0.017188 -0.001771; 0.000000 0.000000 0.000000 1.000000).
-      - Angles (deg; X,Y,Z)=91.0993   26.3810   90.2205; Translations (m;X,Y,Z)=0.0808   -0.1752   -0.00    - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
+- Angles (deg; X,Y,Z)=91.0993   26.3810   90.2205; Translations (m;X,Y,Z)=0.0808   -0.1752   -0.00    - Test the transformation using [testTransformation_sameBone.m](testTransformation_sameBone.m)
     
 - Apply the same transformation (from CT global CS to T1 local CS) to other bony structures below T1 to mantiain the original posture in CT images (we don't know their real  neutral postures)
   - T2 to T12: use [Obj_TransformAndSave.m](Obj_TransformAndSave.m), which calls functions [readObj_vf.m](functions/readObj_vf.m), [applyTransformation.m](functions/applyTransformation.m), and [writeObj_vf.m](functions/writeObj_vf.m) --> output a new obj file in T1 local CS (T2_to_T12_meter_T1CS.obj)
@@ -45,25 +45,61 @@
 ![HyoidBone](pictures/Hyoid_muscleAttachments.jpg "HyoidBone")
 
 **5. Adjust shoulder posture (clavicle and scapular bones) to be a "neutral" posture**
+
+The local coordinate systems of Thorax, clavicle and spacula:
+--- refers to [Wu-2005_ISB recommendation](Wu-2005_ISB-shoulder joint.pdf); 
+--- based on the file "VHM_forShoulderNeutralPosture_0.osim"
+
   -  Obtain bony landmarks in T1 CS (in OpenSim): 
   
      ![shoulder](pictures/Shoulder_landmarks.jpg "Shoulder_landmarks")
 
-  |Landmarks(in T1 CS)|	 X (m)   |  Y (m)    |	 Z (m)    |
-  | -------------     |:--------:| ---------:| ----------:|
-  |Sternoclaviculare_L|	0.0688528 |-0.0197483|	-0.021618 |
-  |Sternoclaviculare_R|	0.0721    |-0.013471 |	0.0297133 |
-  |Acromioclaviulare_L|	0.00392632| 0.0105555|	-0.167512 |
-  |Acromioclaviulare_R|	-0.0121487| 0.0228319|	0.175819  |
-  |TrigonumScapulae_L |	-0.0680862|-0.0648523|	-0.0963781|
-  |TrigonumScapulae_R |	-0.0752219|-0.0606393|	 0.0866429|
-  |AngulusInferior_L  |	-0.0323772|-0.181023 |	-0.112415 |
-  |AngulusInferior_R  |	-0.0328636|-0.170965 |	0.114151  |
- 
+  |Landmarks(in T1 CS)      |	 X (m)    |  Y (m)    |	 Z (m)    |
+  | -------------           |:-----------:| ---------:| ---------:|
+  |Sternoclaviculare_L(SC_L)|	0.0688528 |-0.0197483 |	-0.021618 |
+  |Sternoclaviculare_R(SC_R)|	0.0721    |-0.013471  |	0.0297133 |
+  |Acromioclaviulare_L(AC_L)|	0.00392632| 0.0105555 |	-0.167512 |
+  |Acromioclaviulare_R(AC_R)|	-0.0121487| 0.0228319 |	0.175819  |
+  |TrigonumScapulae_L (TS_L)|	-0.0680862|-0.0648523 |	-0.0963781|
+  |TrigonumScapulae_R (TS_R)|	-0.0752219|-0.0606393 |	 0.0866429|
+  |AngulusInferior_L  (AI_L)|	-0.0323772|-0.181023  |	-0.112415 |
+  |AngulusInferior_R  (AI_R)|	-0.0328636|-0.170965  | 0.114151  |
+  |AngulusAcromialis_L(AA_L)|	-0.0247613|-0.00506821|	 -0.19215 |
+  |AngulusAcromialis_R(AA_R)|	-0.0394764| -0.0103739|	 0.18265  |
+  |C7_Spinosus        (C7)  |	-0.0529946| -0.011114 |-0.00383815|
+  |T8_Spinosus        (T8)  |-0.00182668  | -0.226247 |0.00186527 |
+  |Incisura Jugularis (IJ)  |0.0778201    | -0.0194623|0.00461227 |
+  |Processus Xiphoideus(PX) |0.217731     | -0.168973 |0.00933912 |
+  
   Notes: referring to the old notes"...\Research_WSU\VHM Model\VHM_updated\SetupLocalCS.xlsx"; the landmarks TS  were adjusted.
   
-  -  Adjust Clavicle (joint links: T1--> aux_clavicelL or aux_clavicelR (Translation only; XY: sagittal plane, Y: vertical up) --> Rotation only; clavicelL or clavicelR)
-     - Create an auxiliary object for clavicle (e.g., "aux_clavicelL" here) in OpenSim (in order to rotate the clavicle to horizontal):"VHM_forShoulderNeutralPosture_clavicle0.jnt"
+  - Thorax CS: use [SetupLocalCS_ISB_Thorax.m](SetupLocalCS_ISB_Thorax.m) to calculate the location and orientation of auxThoraxjnt (in parent T1 CS); see corresponding OpenSim joint file [VHM_forShoulderNeutralPosture_ISB_ThoraxCS.jnt](VHM_forShoulderNeutralPosture_ISB_ThoraxCS.jnt)
+    - The origin: coincident with IJ (aux_Thoraxjnt_origin_inT1CS = [0.0778   -0.0195    0.0046]).
+	- Y: The line connecting the midpoint between PX and T8 and the midpoint between IJ and C7, pointing upward.
+	- Z: The line perpendicular to the plane formed by IJ, C7, and the midpoint between PX and T8,pointing to the right.
+	- X: The common line perpendicular to the Z- and Y-axis, pointing forwards.
+	- Notes: aux_Thoraxjnt_orientation_inT1CS_rad =[ -0.0173   -0.0385    0.4833]; aux_Thoraxjnt_orientation_inT1CS_deg =[ -0.9934   -2.2081   27.6935];
+	
+	![Thorax CS](pictures/ThoraxCS.jpg "Thorax CS")
+  
+  - Adjust Clavicle
+    - modify clavicle local CS (ISB, Wu-2005):
+	  - The origin: coincident with SC.
+	  - Z: The line connecting SC and AC, pointing to AC.
+	  - X: The line perpendicular to Z and Y, pointing forward. Note that the X-axis is defined with respect to the vertical axis of the thorax (Y axis) because only two bonylandmarks can be discerned at the clavicle.
+
+    ![Clavicle CS](pictures/ClavicleCS.jpg "Clavicle CS")
+	
+	In matlab (notes here first), transform the clavicle bone first (to get "Left_Clavicle_meter_ISB-CS.obj"):
+	  - ZY plane: Z= the line connecting SC and AC; Y=the same Y axis as auxThoraxjnt
+	    - Bony landmarks (for left side): SC_L, AC_L, auxThorax_Y1 [0.0314184 0.0690799 0.0019348] and auxThorax_Y2 [0.0778201 -0.0194623 0.00461227] (in T1 CS);
+            - Use PCA to get a plane formed by those four bony landmarks.
+		
+  
+  
+  
+  -  (old) Adjust Clavicle (joint links: T1--> aux_clavicelL or aux_clavicelR (Translation only; XY: sagittal plane, Y: vertical up) --> Rotation only; clavicelL or clavicelR)
+     - Create an auxiliary object for clavicle (e.g., "aux_clavicelL" here) in OpenSim (in order to rotate the clavicle to horizontal): [VHM_forShoulderNeutralPosture_clavicle0.jnt](VHM_forShoulderNeutralPosture_clavicle0.jnt)
        - the origin of "aux_clavicelL": Sternoclaviculare_L;
        - Obtain the rotation angle about Z axis to make its Y axis vertical: 31.6324088956378 deg (In M020, the T1 CS tilting angle=-31.6324088956378 deg/ -0.552089685566 radian)
        - notes in joint file: 
@@ -71,7 +107,7 @@
        beginjoint aux_clavicelL;  segments **T1** aux_clavicelL;  order t r3 r1 r2; axis1 1.000000 0.000000 0.000000; axis2 0.000000 1.000000 0.000000; axis3 0.000000 0.000000 1.000000; tx  constant 0.0688528; ty  constant -0.0197483; tz  constant -0.021618; r1  constant 0.000000; r2  constant 0.000000; r3  constant 31.6324088956378; endjoint.
 
      - Transform the origin of the clavicle bone to Sternoclaviculare_L: use [SetupLocalCS_Clavicle.m](SetupLocalCS_Clavicle.m) and MeshLab(to get obj files with norm info).
-     - Put the new clavicle bone file into aux_clavicelL CS (in OpenSim): "VHM_forShoulderNeutralPosture_clavicle1.jnt"
+     - Put the new clavicle bone file into aux_clavicelL CS (in OpenSim): [VHM_forShoulderNeutralPosture_clavicle1.jnt](VHM_forShoulderNeutralPosture_clavicle1.jnt)
        - put the clavicle (with new local CS) back to the original CT posture--in joint file: segments aux_clavicelL clavicleL; ...;r1  constant 0.000000; r2  constant 0.000000; r3  constant -31.6324088956378); 
          - notes: obtain the landmarks of clavicle (Sternoclaviculare and Acromioclaviulare; originally in T1 CS) in the new clavicle CS (in OpenSim): in clavicleL CS, Sternoclaviculare_L=0 0 0, Acromioclaviulare_L=-0.0649265 0.0303038 -0.145894;in clavicleR CS, Sternoclaviculare_R=0 0 0, Acromioclaviulare_R=-0.0842487 0.0363029 0.146106.	 
        - set clavicle  close to horizontal (the angle wrt X axis was calculated based on SC-AC angle in aux_clavicelL CS; left clavicle: -22.306 deg/-0.38931 rad; right clavilce: 27.20216 deg/0.474767)--in joint file: segments **aux_clavicelL** clavicleL; ...; r1  constant -22.306; r2  constant 0.000000; r3  constant -31.6324088956378);
