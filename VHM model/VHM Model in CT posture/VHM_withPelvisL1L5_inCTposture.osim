@@ -1,0 +1,1633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSimDocument Version="10902">
+<Model name="VHM_inCTposture">
+	<defaults>
+	</defaults>
+	<ForceSet>
+	<groups>
+	</groups>
+	<objects>
+	</objects>
+	</ForceSet>
+			<gravity>0.0 -9.80665 0.0</gravity>
+			<BodySet>
+			<objects>
+				<Body name="ground">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint/>
+				</Body>
+				<Body name="auxspine">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="auxspine">
+					<reverse> false </reverse>
+					<parent_body> ground </parent_body>
+					<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="gndpitch">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -3.141592653590 3.141592653590 </range>
+									<keys> p_key rightmouse_button </keys>
+									<clamped> true </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="gndroll">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -3.141592653590 3.141592653590 </range>
+									<keys> r_key rightmouse_button </keys>
+									<clamped> true </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="gndyaw">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -3.141592653590 3.141592653590 </range>
+									<keys> y_key rightmouse_button </keys>
+									<clamped> true </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<function name="f83">
+										<LinearFunction>
+											<coefficients> 1.000000 0.000000 </coefficients>
+										</LinearFunction>
+									</function>
+									<coordinates> gndpitch </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<function name="f81">
+										<LinearFunction>
+											<coefficients> 1.000000 0.000000 </coefficients>
+										</LinearFunction>
+									</function>
+									<coordinates> gndroll </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<function name="f82">
+										<LinearFunction>
+											<coefficients> 1.000000 0.000000 </coefficients>
+										</LinearFunction>
+									</function>
+									<coordinates> gndyaw </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+				</Body>
+				<Body name="auxt1_new">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="auxt1_new">
+							<parent_body> auxspine </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 -0.552089685566 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+				</Body>
+				<Body name="T1">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="t1jnt">
+							<parent_body> auxt1_new </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> T1.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="T2T12">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="t2t12jnt">
+							<parent_body> T1 </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> T2_to_T12_meter_T1CS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="L1L5">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="l1l5jnt">
+							<parent_body> T1 </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> L1_to_L5_meter_T1CS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="Pelvis">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="pelvisjnt">
+							<parent_body> T1 </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> Pelvis_meter_T1CS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="auxThorax">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="auxThoraxjnt">
+							<parent_body> T1 </parent_body>
+							<location_in_parent> 0.077820100000 -0.019462300000 0.004612270000 </location_in_parent>
+							<orientation_in_parent> -0.007867944268 -0.042565089798 0.483009398514 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+				</Body>
+				<Body name="ribcage">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="ribcagejnt">
+							<parent_body> T1 </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> Ribs_meter_T1CS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="clavicleL">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="clavicleLjnt">
+							<parent_body> T1 </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> Left_Clavicle_meter_T1CS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="clavicleR">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="clavicleRjnt">
+							<parent_body> T1 </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> Right_Clavicle_meter_T1CS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="scapulaL">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="scapulaLjnt">
+							<parent_body> clavicleL </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> Left_Scapula_meter_T1CS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="scapulaR">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="scapulaRjnt">
+							<parent_body> clavicleR </parent_body>
+							<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> Right_Scapula_meter_T1CS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="auxt1">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="auxt1jnt">
+					<reverse> false </reverse>
+					<parent_body> auxspine </parent_body>
+					<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="pitch">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -0.872664625997 1.256637061436 </range>
+									<clamped> true </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="roll">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -0.698131700798 0.698131700798 </range>
+									<clamped> true </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="yaw">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -1.308996938996 1.308996938996 </range>
+									<clamped> true </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<function name="f73">
+										<NaturalCubicSpline>
+											<x> -1.745329251994 1.745329251994 </x>
+											<y> -0.115191730632 0.115191730632 </y>
+										</NaturalCubicSpline>
+									</function>
+									<coordinates> pitch </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<function name="f71">
+										<NaturalCubicSpline>
+											<x> -1.745329251994 1.745329251994 </x>
+											<y> -0.115191730632 0.115191730632 </y>
+										</NaturalCubicSpline>
+									</function>
+									<coordinates> roll </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<function name="f72">
+										<NaturalCubicSpline>
+											<x> -1.745329251994 1.745329251994 </x>
+											<y> -0.045378560552 0.045378560552 </y>
+										</NaturalCubicSpline>
+									</function>
+									<coordinates> yaw </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+				</Body>
+				<Body name="cerv7">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="cerv7jnt">
+							<parent_body> auxt1 </parent_body>
+							<location_in_parent> 0.004800000000 0.011400000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 -0.530282165077 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> C7.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="aux7">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="aux7jnt">
+					<reverse> false </reverse>
+					<parent_body> cerv7 </parent_body>
+					<location_in_parent> -0.001100000000 0.007000000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="aux7jnt_r3">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux7jnt_r1">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux7jnt_r2">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<coordinates> aux7jnt_r3 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<coordinates> aux7jnt_r1 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<coordinates> aux7jnt_r2 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+				</Body>
+				<Body name="cerv6">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="cerv6jnt">
+							<parent_body> aux7 </parent_body>
+							<location_in_parent> -0.003300000000 0.011600000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.178545052479 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> C6.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="aux6">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="aux6jnt">
+					<reverse> false </reverse>
+					<parent_body> cerv6 </parent_body>
+					<location_in_parent> -0.002100000000 0.003900000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="aux6jnt_r3">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux6jnt_r1">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux6jnt_r2">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<coordinates> aux6jnt_r3 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<coordinates> aux6jnt_r1 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<coordinates> aux6jnt_r2 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+				</Body>
+				<Body name="cerv5">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="cerv5jnt">
+							<parent_body> aux6 </parent_body>
+							<location_in_parent> -0.001300000000 0.015000000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 -0.017714981010 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> C5.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="aux5">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="aux5jnt">
+					<reverse> false </reverse>
+					<parent_body> cerv5 </parent_body>
+					<location_in_parent> -0.002500000000 0.001400000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="aux5jnt_r3">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux5jnt_r1">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux5jnt_r2">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<coordinates> aux5jnt_r3 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<coordinates> aux5jnt_r1 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<coordinates> aux5jnt_r2 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+				</Body>
+				<Body name="cerv4">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="cerv4jnt">
+							<parent_body> aux5 </parent_body>
+							<location_in_parent> -0.001400000000 0.017200000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 -0.018031220917 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> C4.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="aux4">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="aux4jnt">
+					<reverse> false </reverse>
+					<parent_body> cerv4 </parent_body>
+					<location_in_parent> -0.003400000000 0.000300000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="aux4jnt_r3">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux4jnt_r1">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux4jnt_r2">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<coordinates> aux4jnt_r3 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<coordinates> aux4jnt_r1 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<coordinates> aux4jnt_r2 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+				</Body>
+				<Body name="cerv3">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="cerv3jnt">
+							<parent_body> aux4 </parent_body>
+							<location_in_parent> -0.000800000000 0.017500000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.076194552218 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> C3.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="aux3">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="aux3jnt">
+					<reverse> false </reverse>
+					<parent_body> cerv3 </parent_body>
+					<location_in_parent> -0.004200000000 -0.002400000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="aux3jnt_r3">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux3jnt_r1">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux3jnt_r2">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<coordinates> aux3jnt_r3 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<coordinates> aux3jnt_r1 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<coordinates> aux3jnt_r2 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+				</Body>
+				<Body name="cerv2">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="cerv2jnt">
+							<parent_body> aux3 </parent_body>
+							<location_in_parent> -0.000100000000 0.022900000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.017861558246 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> C2.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="aux2">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="aux2jnt">
+					<reverse> false </reverse>
+					<parent_body> cerv2 </parent_body>
+					<location_in_parent> 0.001400000000 0.021100000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="aux2jnt_r3">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux2jnt_r1">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux2jnt_r2">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<coordinates> aux2jnt_r3 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<coordinates> aux2jnt_r1 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<coordinates> aux2jnt_r2 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+				</Body>
+				<Body name="cerv1">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="cerv1jnt">
+							<parent_body> aux2 </parent_body>
+							<location_in_parent> -0.011700000000 -0.006200000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 0.432036038786 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> C1.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="aux1">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="aux1jnt">
+					<reverse> false </reverse>
+					<parent_body> cerv1 </parent_body>
+					<location_in_parent> 0.000000000000 0.027700000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="aux1jnt_r3">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux1jnt_r1">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="aux1jnt_r2">
+									<default_value> 0.000000000000 </default_value>
+									<initial_value> 0.000000000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<coordinates> aux1jnt_r3 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<coordinates> aux1jnt_r1 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<coordinates> aux1jnt_r2 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+				</Body>
+				<Body name="skull">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="skulljnt">
+							<parent_body> aux1 </parent_body>
+							<location_in_parent> 0.001600000000 -0.010800000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 -0.113546039609 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> Skull_meter_LocalCS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="jaw">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+						<WeldJoint name="jawjnt">
+							<parent_body> aux1 </parent_body>
+							<location_in_parent> 0.001600000000 -0.010800000000 0.000000000000 </location_in_parent>
+							<orientation_in_parent> 0.000000000000 0.000000000000 -0.113546039609 </orientation_in_parent>
+							<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+							<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> Mandible_meter_LocalCS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+				<Body name="hyoid_bone">
+					<mass> 0.000000000000 </mass>
+					<mass_center> 0.000000000000 0.000000000000 0.000000000000 </mass_center>
+					<inertia_xx> 0.000000000000 </inertia_xx>
+					<inertia_yy> 0.000000000000 </inertia_yy>
+					<inertia_zz> 0.000000000000 </inertia_zz>
+					<inertia_xy> 0.000000000000 </inertia_xy>
+					<inertia_xz> 0.000000000000 </inertia_xz>
+					<inertia_yz> 0.000000000000 </inertia_yz>
+					<Joint>
+				<CustomJoint name="hyoid_bone">
+					<reverse> false </reverse>
+					<parent_body> cerv3 </parent_body>
+					<location_in_parent> 0.000000000000 0.000000000000 0.000000000000 </location_in_parent>
+					<orientation_in_parent> 0.000000000000 0.000000000000 0.000000000000 </orientation_in_parent>
+					<location> 0.000000000000 0.000000000000 0.000000000000 </location>
+					<orientation> 0.000000000000 0.000000000000 0.000000000000 </orientation>
+					<!--Generalized coordinates parameterizing this joint.-->
+					<CoordinateSet>
+					<objects>
+								<Coordinate name="hyoid_bone_r3">
+									<default_value> 0.122416853425 </default_value>
+									<initial_value> 0.122416853425 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="hyoid_bone_tx">
+									<default_value> 0.041786000000 </default_value>
+									<initial_value> 0.041786000000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+								<Coordinate name="hyoid_bone_ty">
+									<default_value> -0.013189800000 </default_value>
+									<initial_value> -0.013189800000 </initial_value>
+									<range> -99999.9 99999.9 </range>
+									<clamped> false </clamped>
+									<locked> false </locked>
+								</Coordinate>
+					</objects>
+					</CoordinateSet>
+							<SpatialTransform>
+								<TransformAxis name="rotation1">
+									<axis> 0.000000000000 0.000000000000 1.000000000000 </axis>
+									<coordinates> hyoid_bone_r3 </coordinates>
+								</TransformAxis>
+								<TransformAxis name="rotation2">
+									<axis> 1.000000000000 0.000000000000 0.000000000000 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="rotation3">
+									<axis> 0.000000000000 1.000000000000 0.000000000000 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+								<TransformAxis name="translation1">
+									<axis> 1.0 0.0 0.0 </axis>
+									<coordinates> hyoid_bone_tx </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation2">
+									<axis> 0.0 1.0 0.0 </axis>
+									<coordinates> hyoid_bone_ty </coordinates>
+								</TransformAxis>
+								<TransformAxis name="translation3">
+									<axis> 0.0 0.0 1.0 </axis>
+									<function>
+										<Constant>
+											<value> 0.000000 </value>
+										</Constant>
+									</function>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> Hyoid_meter_LocalCS_vnf.vtp </geometry_files>
+						<scale_factors> 1.000000000000 1.000000000000 1.000000000000 </scale_factors>
+					</VisibleObject>
+				</Body>
+			</objects>
+			</BodySet>
+			<ConstraintSet>
+			<objects>
+				<CoordinateCouplerConstraint name="aux7jnt_r1_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux7jnt_r1 </dependent_coordinate_name>
+					<independent_coordinate_names> roll </independent_coordinate_names>
+					<coupled_coordinates_function name="f61">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.200712863979 0.200712863979 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux7jnt_r2_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux7jnt_r2 </dependent_coordinate_name>
+					<independent_coordinate_names> yaw </independent_coordinate_names>
+					<coupled_coordinates_function name="f62">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.136135681656 0.136135681656 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux7jnt_r3_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux7jnt_r3 </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f63">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.218166156499 0.218166156499 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux6jnt_r1_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux6jnt_r1 </dependent_coordinate_name>
+					<independent_coordinate_names> roll </independent_coordinate_names>
+					<coupled_coordinates_function name="f51">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.228638132011 0.228638132011 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux6jnt_r2_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux6jnt_r2 </dependent_coordinate_name>
+					<independent_coordinate_names> yaw </independent_coordinate_names>
+					<coupled_coordinates_function name="f52">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.158824961931 0.158824961931 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux6jnt_r3_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux6jnt_r3 </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f53">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.256563400043 0.256563400043 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux5jnt_r1_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux5jnt_r1 </dependent_coordinate_name>
+					<independent_coordinate_names> roll </independent_coordinate_names>
+					<coupled_coordinates_function name="f41">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.314159265359 0.314159265359 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux5jnt_r2_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux5jnt_r2 </dependent_coordinate_name>
+					<independent_coordinate_names> yaw </independent_coordinate_names>
+					<coupled_coordinates_function name="f42">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.158824961931 0.158824961931 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux5jnt_r3_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux5jnt_r3 </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f43">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.256563400043 0.256563400043 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux4jnt_r1_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux4jnt_r1 </dependent_coordinate_name>
+					<independent_coordinate_names> roll </independent_coordinate_names>
+					<coupled_coordinates_function name="f31">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.314159265359 0.314159265359 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux4jnt_r2_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux4jnt_r2 </dependent_coordinate_name>
+					<independent_coordinate_names> yaw </independent_coordinate_names>
+					<coupled_coordinates_function name="f32">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.158824961931 0.158824961931 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux4jnt_r3_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux4jnt_r3 </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f33">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.191986217719 0.191986217719 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux3jnt_r1_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux3jnt_r1 </dependent_coordinate_name>
+					<independent_coordinate_names> roll </independent_coordinate_names>
+					<coupled_coordinates_function name="f21">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.286233997327 0.286233997327 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux3jnt_r2_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux3jnt_r2 </dependent_coordinate_name>
+					<independent_coordinate_names> yaw </independent_coordinate_names>
+					<coupled_coordinates_function name="f22">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.068067840828 0.068067840828 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux3jnt_r3_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux3jnt_r3 </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f23">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.129154364648 0.129154364648 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux2jnt_r1_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux2jnt_r1 </dependent_coordinate_name>
+					<independent_coordinate_names> roll </independent_coordinate_names>
+					<coupled_coordinates_function name="f11">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.143116998664 0.143116998664 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux2jnt_r2_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux2jnt_r2 </dependent_coordinate_name>
+					<independent_coordinate_names> yaw </independent_coordinate_names>
+					<coupled_coordinates_function name="f12">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.905825881785 0.905825881785 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux2jnt_r3_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux2jnt_r3 </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f13">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.256563400043 0.256563400043 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux1jnt_r1_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux1jnt_r1 </dependent_coordinate_name>
+					<independent_coordinate_names> roll </independent_coordinate_names>
+					<coupled_coordinates_function name="f1">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.143116998664 0.143116998664 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux1jnt_r2_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux1jnt_r2 </dependent_coordinate_name>
+					<independent_coordinate_names> yaw </independent_coordinate_names>
+					<coupled_coordinates_function name="f2">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.113446401380 0.113446401380 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="aux1jnt_r3_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> aux1jnt_r3 </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f3">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.321140582367 0.321140582367 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="hyoid_bone_r3_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> hyoid_bone_r3 </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f93">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> 0.143177525321 0.101656181529 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="hyoid_bone_tx_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> hyoid_bone_tx </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f91">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> 0.023177000000 0.060395000000 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+				<CoordinateCouplerConstraint name="hyoid_bone_ty_con">
+					<isDisabled> false </isDisabled>
+					<dependent_coordinate_name> hyoid_bone_ty </dependent_coordinate_name>
+					<independent_coordinate_names> pitch </independent_coordinate_names>
+					<coupled_coordinates_function name="f92">
+						<NaturalCubicSpline>
+							<x> -1.745329251994 1.745329251994 </x>
+							<y> -0.021775183000 -0.004604417000 </y>
+						</NaturalCubicSpline>
+					</coupled_coordinates_function>
+				</CoordinateCouplerConstraint>
+			</objects>
+			</ConstraintSet>
+			<MarkerSet>
+				<objects>
+				</objects>
+			</MarkerSet>
+</Model>
+</OpenSimDocument>
